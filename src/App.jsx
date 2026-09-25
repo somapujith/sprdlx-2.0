@@ -6,7 +6,7 @@ import './App.css'
 // send over the real project names and destinations.
 const PROJECTS = [
   { title: 'Esthetic Insights', category: 'Digital Infrastructure', href: 'https://www.estheticinsights.com' },
-  { title: 'Anthill Ventures', category: 'Typography', href: 'https://www.anthillventures.com' },
+  { title: 'Anthill Ventures', category: 'AI Product Engineering', href: 'https://www.anthillventures.com' },
   { title: 'Volery', category: 'Intelligence Engineering', href: 'https://volery.vc' },
   { title: 'Flamingo Aerospace', category: 'Web Development', href: 'https://flamingoaerospace.com' },
   { title: 'Lipi', category: 'AI Extension', href: 'https://chromewebstore.google.com/detail/jfmgmpmahcomjmdacoekafmneogchabj?utm_source=item-share-cb' },
