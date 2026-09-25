@@ -119,7 +119,7 @@ function App() {
               rel={item.href !== '#' ? 'noopener noreferrer' : undefined}
               className={`row${isActive ? ' active' : ''}`}
               onClick={(e) => {
-                if (!isActive) e.preventDefault()
+                if (!isActive || item.href === '#') e.preventDefault()
               }}
               ref={(el) => {
                 if (i < PROJECTS.length) rowRefs.current[i] = el
