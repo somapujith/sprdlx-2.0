@@ -134,6 +134,33 @@ function App() {
       <div className="logo-mark" aria-hidden="true">
         <img src="/sprdlx-logo.svg" alt="" className="logo-mark-img" />
       </div>
+      <nav className="social-links">
+        <a
+          href="https://www.instagram.com/sprdlx.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="17.8" cy="6.2" r="1.1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a
+          href="https://www.linkedin.com/company/super-deluxe-studios/posts/?viewAsMember=true"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="none" stroke="currentColor" strokeWidth="1.8" />
+            <rect x="6.6" y="9.7" width="2.2" height="8" />
+            <circle cx="7.7" cy="6.4" r="1.4" />
+            <path d="M11.4 9.7h2.1v1.2c.5-.8 1.4-1.4 2.7-1.4 2 0 3.3 1.3 3.3 3.8v4.4h-2.2v-4c0-1.2-.5-2-1.6-2s-1.7.8-1.7 2v4h-2.2z" />
+          </svg>
+        </a>
+      </nav>
     </main>
   )
 }

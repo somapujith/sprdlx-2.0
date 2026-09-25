@@ -6,6 +6,31 @@
   overflow: hidden;
 }
 
+.social-links {
+  position: absolute;
+  top: clamp(20px, 2.5vw, 40px);
+  right: clamp(20px, 2.5vw, 48px);
+  z-index: 2;
+  display: flex;
+  gap: clamp(16px, 2vw, 32px);
+}
+
+.social-links a {
+  display: inline-flex;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  color: var(--text-active);
+}
+
+.social-links svg {
+  width: clamp(18px, 1.6vw, 24px);
+  height: clamp(18px, 1.6vw, 24px);
+}
+
 .logo-mark {
   position: absolute;
   right: clamp(24px, 4vw, 64px);
