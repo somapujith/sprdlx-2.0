@@ -5,10 +5,10 @@ import './App.css'
 // Placeholder entries — swap `title`/`category`/`href` for each once you
 // send over the real project names and destinations.
 const PROJECTS = [
-  { title: 'Esthetic Insights', category: 'Experimental Media', href: 'https://www.estheticinsights.com' },
+  { title: 'Esthetic Insights', category: 'Digital Infrastructure', href: 'https://www.estheticinsights.com' },
   { title: 'Anthill Ventures', category: 'Typography', href: 'https://www.anthillventures.com' },
-  { title: 'Volery', category: 'Concept Art', href: 'https://volery.vc' },
-  { title: 'Flamingo Aerospace', category: 'Photography', href: 'https://flamingoaerospace.com' },
+  { title: 'Volery', category: 'Intelligence Engineering', href: 'https://volery.vc' },
+  { title: 'Flamingo Aerospace', category: 'Web Development', href: 'https://flamingoaerospace.com' },
   { title: 'Lipi', category: 'AI Extension', href: 'https://chromewebstore.google.com/detail/jfmgmpmahcomjmdacoekafmneogchabj?utm_source=item-share-cb' },
   { title: '??????????', category: 'Upcoming', href: '#' },
   { title: '??????????', category: 'Upcoming', href: '#' },
