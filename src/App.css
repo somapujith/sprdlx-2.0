@@ -12,7 +12,7 @@
   bottom: clamp(24px, 4vw, 64px);
   width: clamp(260px, 34vw, 640px);
   aspect-ratio: 873 / 774;
-  pointer-events: auto;
+  pointer-events: none;
   z-index: 0;
 }
 

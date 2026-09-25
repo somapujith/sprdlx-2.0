@@ -1,41 +1,19 @@
 import { useEffect, useRef, useState } from 'react'
-import DitherVeil from './components/DitherVeil'
 import './App.css'
-
-// True only when WebGL is available and actually backed by a GPU — software
-// rasterizers (SwiftShader, llvmpipe, the Windows "Basic Render Driver",
-// browsers with hardware acceleration disabled) fall back to the plain logo.
-function supportsHardwareWebGL() {
-  try {
-    const canvas = document.createElement('canvas')
-    const gl = canvas.getContext('webgl2') || canvas.getContext('webgl')
-    if (!gl) return false
-    const debugInfo = gl.getExtension('WEBGL_debug_renderer_info')
-    const renderer = debugInfo
-      ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
-      : gl.getParameter(gl.RENDERER)
-    if (/swiftshader|llvmpipe|software|basic render|microsoft basic/i.test(String(renderer))) {
-      return false
-    }
-    return true
-  } catch {
-    return false
-  }
-}
 
 // Placeholder entries — swap `title`/`category`/`href` for each once you
 // send over the real project names and destinations.
 const PROJECTS = [
-  { title: 'Volery', category: 'Concept Art', href: 'https://volery.vc' },
-  { title: 'Anthill Ventures', category: 'Typography', href: 'https://www.anthillventures.com' },
   { title: 'Esthetic Insights', category: 'Experimental Media', href: 'https://www.estheticinsights.com' },
+  { title: 'Anthill Ventures', category: 'Typography', href: 'https://www.anthillventures.com' },
+  { title: 'Volery', category: 'Concept Art', href: 'https://volery.vc' },
   { title: 'Flamingo Aerospace', category: 'Photography', href: 'https://flamingoaerospace.com' },
-  { title: 'Lipi', category: 'Editorial Design', href: '#' },
-  { title: 'Weekend', category: 'Sound Design', href: '#' },
-  { title: 'Shattered Glass', category: 'Art Installations', href: '#' },
-  { title: 'Quiet Static', category: 'Motion Graphics', href: '#' },
-  { title: 'Velvet Horizon', category: 'Brand Identity', href: '#' },
-  { title: 'Hollow Bloom', category: 'Type Foundry', href: '#' },
+  { title: 'Lipi', category: 'AI Extension', href: 'https://chromewebstore.google.com/detail/jfmgmpmahcomjmdacoekafmneogchabj?utm_source=item-share-cb' },
+  { title: '??????????', category: 'Upcoming', href: '#' },
+  { title: '??????????', category: 'Upcoming', href: '#' },
+  { title: '??????????', category: 'Upcoming', href: '#' },
+  { title: '??????????', category: 'Upcoming', href: '#' },
+  { title: '??????????', category: 'Upcoming', href: '#' },
 ]
 
 const COPIES = 3
@@ -48,7 +26,6 @@ function App() {
   const audioCtxRef = useRef(null)
   const frameRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
-  const [webglOk] = useState(supportsHardwareWebGL)
 
   const tripled = Array.from({ length: COPIES }, () => PROJECTS).flat()
 
@@ -72,7 +49,11 @@ function App() {
     const firstRow = rowRefs.current[0]
     if (!track || !firstRow) return
     const rowHeight = firstRow.offsetHeight
-    track.scrollTop = rowHeight * PROJECTS.length * MIDDLE_COPY
+    const startIndex = Math.max(0, PROJECTS.findIndex((p) => p.title === 'Volery'))
+    const startRowCenter = rowHeight * (PROJECTS.length * MIDDLE_COPY + startIndex) + rowHeight / 2
+    track.scrollTop = startRowCenter - track.clientHeight / 2
+    activeIndexRef.current = startIndex
+    setActiveIndex(startIndex)
   }, [])
 
   function playTick() {
@@ -137,6 +118,9 @@ function App() {
               target={item.href !== '#' ? '_blank' : undefined}
               rel={item.href !== '#' ? 'noopener noreferrer' : undefined}
               className={`row${isActive ? ' active' : ''}`}
+              onClick={(e) => {
+                if (!isActive) e.preventDefault()
+              }}
               ref={(el) => {
                 if (i < PROJECTS.length) rowRefs.current[i] = el
               }}
@@ -148,23 +132,7 @@ function App() {
         })}
       </div>
       <div className="logo-mark" aria-hidden="true">
-        {webglOk ? (
-          <DitherVeil
-            src="/sprdlx-logo.svg"
-            fit="contain"
-            pattern="floyd"
-            pixelSize={3}
-            inkColor="#000000"
-            paperColor="#ffffff"
-            revealRadius={220}
-            softness={0.6}
-            linger={1}
-            rim={0}
-            clickBurst
-          />
-        ) : (
-          <img src="/sprdlx-logo.svg" alt="" className="logo-mark-img" />
-        )}
+        <img src="/sprdlx-logo.svg" alt="" className="logo-mark-img" />
       </div>
     </main>
   )
