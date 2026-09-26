@@ -11,7 +11,7 @@ const PROJECTS = [
   { title: 'Pulp', category: 'Skincare Brand', href: 'https://www.instagram.com/pulp_india' },
   { title: 'Sunday Everyday', category: 'Skincare Brand', href: 'https://www.instagram.com/feelslikesundayeveryday' },
   { title: 'Lipi', category: 'AI Extension', href: 'https://chromewebstore.google.com/detail/jfmgmpmahcomjmdacoekafmneogchabj?utm_source=item-share-cb' },
-  { title: '??????????', category: 'Upcoming', href: '#' },
+  { title: 'Meter Mama', category: 'Interactive Experience', href: 'https://autowala-lovat.vercel.app' },
   { title: '??????????', category: 'Upcoming', href: '#' },
   { title: '??????????', category: 'Upcoming', href: '#' },
   { title: '??????????', category: 'Upcoming', href: '#' },
